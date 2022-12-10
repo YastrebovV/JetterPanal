@@ -1,0 +1,15 @@
+E:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\JetterPanel\JetterPanal\JetterPanal\bin\Debug\JetterPanal.exe
+E:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\JetterPanel\JetterPanal\JetterPanal\bin\Debug\JetterPanal.pdb
+E:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\JetterPanel\JetterPanal\JetterPanal\obj\Debug\JetterPanal.csprojResolveAssemblyReference.cache
+E:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\JetterPanel\JetterPanal\JetterPanal\obj\Debug\HandMode.g.cs
+E:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\JetterPanel\JetterPanal\JetterPanal\obj\Debug\MainWindow.g.cs
+E:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\JetterPanel\JetterPanal\JetterPanal\obj\Debug\App.g.cs
+E:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\JetterPanel\JetterPanal\JetterPanal\obj\Debug\JetterPanal_MarkupCompile.cache
+E:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\JetterPanel\JetterPanal\JetterPanal\obj\Debug\JetterPanal_MarkupCompile.lref
+E:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\JetterPanel\JetterPanal\JetterPanal\obj\Debug\HandMode.baml
+E:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\JetterPanel\JetterPanal\JetterPanal\obj\Debug\MainWindow.baml
+E:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\JetterPanel\JetterPanal\JetterPanal\obj\Debug\JetterPanal.g.resources
+E:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\JetterPanel\JetterPanal\JetterPanal\obj\Debug\JetterPanal.Properties.Resources.resources
+E:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\JetterPanel\JetterPanal\JetterPanal\obj\Debug\JetterPanal.csproj.GenerateResource.Cache
+E:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\JetterPanel\JetterPanal\JetterPanal\obj\Debug\JetterPanal.exe
+E:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\JetterPanel\JetterPanal\JetterPanal\obj\Debug\JetterPanal.pdb
