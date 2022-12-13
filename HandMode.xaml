@@ -36,7 +36,7 @@
         <Label x:Name="label_Copy" Content="Side A:" HorizontalAlignment="Left" Margin="39,260,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label_Copy1" Content="Backstop Position:" HorizontalAlignment="Left" Margin="39,292,0,0" VerticalAlignment="Top"/>
         <TextBox x:Name="tbActAngl2" HorizontalAlignment="Left" Height="23" Margin="151,232,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsReadOnlyCaretVisible="True"/>
-        <TextBox x:Name="tbSideA" HorizontalAlignment="Left" Height="23" Margin="151,264,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57"/>
+        <TextBox x:Name="tbSideA" HorizontalAlignment="Left" Height="23" Margin="151,264,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" KeyDown="tbSideA_KeyDown"/>
         <TextBox x:Name="tbBackPos" HorizontalAlignment="Left" Height="23" Margin="151,295,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="57" IsReadOnlyCaretVisible="True"/>
         <Button x:Name="btCalc" Content="Calculation" HorizontalAlignment="Left" Margin="251,295,0,0" VerticalAlignment="Top" Width="113" Height="23" Click="btCalc_Click"/>
         <Button x:Name="btEnableMotor" Content="        Enable&#xD;&#xA;Grinding Motor" HorizontalAlignment="Left" Margin="39,336,0,0" VerticalAlignment="Top" Width="113" Height="46"/>

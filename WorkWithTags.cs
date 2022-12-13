@@ -84,8 +84,10 @@ namespace JetterPanal
                 } else if(adr > 10000000) //входа
                 {
                     byte[] betweenVar = { 0x00, 0x0a, 0x85, 0x00 };
+                    byte[] zero = { 0x00, 0x00, 0x00, 0x00 };
                     b_addresses = combine(b_addresses, betweenVar);
                     b_addresses = combine(b_addresses, b_address);
+                    b_addresses = combine(b_addresses, zero);
                 }
                 else
                 {

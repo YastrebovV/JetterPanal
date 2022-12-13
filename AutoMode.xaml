@@ -1,0 +1,15 @@
+﻿<Window x:Class="JetterPanal.AutoMode"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JetterPanal"
+        mc:Ignorable="d"
+        Title="AutoMode" Height="265.9" Width="205">
+    <Grid Margin="0,0,2,0">
+        <Button x:Name="button" Content="New Plate" HorizontalAlignment="Left" Height="52" Margin="17,21,0,0" VerticalAlignment="Top" Width="163"/>
+        <Button x:Name="button_Copy" Content="Load Plate" HorizontalAlignment="Left" Height="52" Margin="17,90,0,0" VerticalAlignment="Top" Width="163"/>
+        <Button x:Name="button_Copy1" Content="Manage Plates" HorizontalAlignment="Left" Height="52" Margin="17,160,0,0" VerticalAlignment="Top" Width="163"/>
+
+    </Grid>
+</Window>
