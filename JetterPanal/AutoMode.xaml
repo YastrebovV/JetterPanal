@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JetterPanal"
         mc:Ignorable="d"
-        Title="AutoMode" Height="265.9" Width="205">
+        Title="AutoMode" Height="265.9" Width="205" Closing="Window_Closing" Loaded="Window_Loaded">
     <Grid Margin="0,0,2,0">
-        <Button x:Name="button" Content="New Plate" HorizontalAlignment="Left" Height="52" Margin="17,21,0,0" VerticalAlignment="Top" Width="163"/>
+        <Button x:Name="bnNewPlate" Content="New Plate" HorizontalAlignment="Left" Height="52" Margin="17,21,0,0" VerticalAlignment="Top" Width="163" Click="bnNewPlate_Click"/>
         <Button x:Name="button_Copy" Content="Load Plate" HorizontalAlignment="Left" Height="52" Margin="17,90,0,0" VerticalAlignment="Top" Width="163"/>
         <Button x:Name="button_Copy1" Content="Manage Plates" HorizontalAlignment="Left" Height="52" Margin="17,160,0,0" VerticalAlignment="Top" Width="163"/>
 

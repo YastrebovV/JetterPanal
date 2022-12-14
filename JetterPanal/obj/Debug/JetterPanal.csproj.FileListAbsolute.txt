@@ -17,3 +17,24 @@ E:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\JetterPanel\JetterPanal\Je
 E:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\JetterPanel\JetterPanal\JetterPanal\obj\Debug\Referens.g.cs
 E:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\JetterPanel\JetterPanal\JetterPanal\obj\Debug\AutoMode.baml
 E:\PROGRAMMING\C#  Projects\InWorking\ActiveProgramms\JetterPanel\JetterPanal\JetterPanal\obj\Debug\Referens.baml
+E:\PROGRAMMING\GIT\JetterPanel\JetterPanal\JetterPanal\obj\Debug\JetterPanal.exe
+E:\PROGRAMMING\GIT\JetterPanel\JetterPanal\JetterPanal\obj\Debug\JetterPanal.pdb
+E:\PROGRAMMING\GIT\JetterPanel\JetterPanal\JetterPanal\bin\Debug\JetterPanal.exe
+E:\PROGRAMMING\GIT\JetterPanel\JetterPanal\JetterPanal\bin\Debug\JetterPanal.pdb
+E:\PROGRAMMING\GIT\JetterPanel\JetterPanal\JetterPanal\obj\Debug\JetterPanal.csprojResolveAssemblyReference.cache
+E:\PROGRAMMING\GIT\JetterPanel\JetterPanal\JetterPanal\obj\Debug\AutoMode.g.cs
+E:\PROGRAMMING\GIT\JetterPanel\JetterPanal\JetterPanal\obj\Debug\AutoNewPlate.g.cs
+E:\PROGRAMMING\GIT\JetterPanel\JetterPanal\JetterPanal\obj\Debug\HandMode.g.cs
+E:\PROGRAMMING\GIT\JetterPanel\JetterPanal\JetterPanal\obj\Debug\MainWindow.g.cs
+E:\PROGRAMMING\GIT\JetterPanel\JetterPanal\JetterPanal\obj\Debug\Referens.g.cs
+E:\PROGRAMMING\GIT\JetterPanel\JetterPanal\JetterPanal\obj\Debug\App.g.cs
+E:\PROGRAMMING\GIT\JetterPanel\JetterPanal\JetterPanal\obj\Debug\JetterPanal_MarkupCompile.cache
+E:\PROGRAMMING\GIT\JetterPanel\JetterPanal\JetterPanal\obj\Debug\JetterPanal_MarkupCompile.lref
+E:\PROGRAMMING\GIT\JetterPanel\JetterPanal\JetterPanal\obj\Debug\AutoMode.baml
+E:\PROGRAMMING\GIT\JetterPanel\JetterPanal\JetterPanal\obj\Debug\AutoNewPlate.baml
+E:\PROGRAMMING\GIT\JetterPanel\JetterPanal\JetterPanal\obj\Debug\HandMode.baml
+E:\PROGRAMMING\GIT\JetterPanel\JetterPanal\JetterPanal\obj\Debug\MainWindow.baml
+E:\PROGRAMMING\GIT\JetterPanel\JetterPanal\JetterPanal\obj\Debug\Referens.baml
+E:\PROGRAMMING\GIT\JetterPanel\JetterPanal\JetterPanal\obj\Debug\JetterPanal.g.resources
+E:\PROGRAMMING\GIT\JetterPanel\JetterPanal\JetterPanal\obj\Debug\JetterPanal.Properties.Resources.resources
+E:\PROGRAMMING\GIT\JetterPanel\JetterPanal\JetterPanal\obj\Debug\JetterPanal.csproj.GenerateResource.Cache

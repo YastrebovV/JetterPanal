@@ -55,27 +55,33 @@ namespace JetterPanal
 
                     if (intTagList != null && intTagList.Count != 0)
                     {
-                        BitArray bitArr = new BitArray(new int[] { BitConverter.ToInt32(BitConverter.GetBytes(intTagList[0]), 0) }); //1001011
+                        try
+                        {
+                            BitArray bitArr = new BitArray(new int[] { BitConverter.ToInt32(BitConverter.GetBytes(intTagList[0]), 0) }); //1001011
 
-                        if (bitArr[1])
-                        {
-                            pnBackStopDrop.Visibility = Visibility.Visible;
-                        }
-                        else
-                        {
-                            pnBackStopDrop.Visibility = Visibility.Hidden;
-                        }
-
-                        for (int i = 2; i < bitArr.Length; ++i)
-                        {
-                            if (bitArr[i] == true)
+                            if (bitArr[1])
                             {
-                                ellipses[i].Fill = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF50BB3F");
+                                pnBackStopDrop.Visibility = Visibility.Visible;
                             }
                             else
                             {
-                                ellipses[i].Fill = (SolidColorBrush)new BrushConverter().ConvertFromString("#FFC95634");
+                                pnBackStopDrop.Visibility = Visibility.Hidden;
                             }
+
+                            for (int i = 2; i < bitArr.Length; ++i)
+                            {
+                                if (bitArr[i] == true)
+                                {
+                                    ellipses[i-2].Fill = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF50BB3F");
+                                }
+                                else
+                                {
+                                    ellipses[i-2].Fill = (SolidColorBrush)new BrushConverter().ConvertFromString("#FFC95634");
+                                }
+                            }
+                        }catch
+                        {
+
                         }
                     }
 
@@ -85,6 +91,8 @@ namespace JetterPanal
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            stopTimer();
+            timerUpdateData.Dispose();
             main_.Visibility = Visibility.Visible;
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)

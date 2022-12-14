@@ -27,7 +27,6 @@ namespace JetterPanal
         public MainWindow()
         {
             InitializeComponent();
-            FormOpening();
         }
 
         ~MainWindow()
@@ -92,8 +91,7 @@ namespace JetterPanal
 
 
         private void btHandMode_Click(object sender, RoutedEventArgs e)
-        {
-     
+        { 
             if (bitArr != null)
             {               
                 timerUpdateData.Stop();
@@ -120,7 +118,6 @@ namespace JetterPanal
                 timerUpdateData.Stop();
                 bitArr[0][2] = true;
                 tags.setTag(1001010, 0x0a, Convert.ToSingle(ToNumeral(bitArr[0])), udp);
-                timerUpdateData.Start();
 
                 Referens rf = new Referens(udp, this);
                 rf.Show();
@@ -140,6 +137,25 @@ namespace JetterPanal
         private void Window_Closing(object sender, CancelEventArgs e)
         {
             udp.closeUDP();
+        }
+
+        private void btServiceMode_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btAutoMode_Click(object sender, RoutedEventArgs e)
+        {
+            if (bitArr != null)
+            {              
+                stopTimer();
+                bitArr[0][5] = true;
+                tags.setTag(1001010, 0x0a, Convert.ToSingle(ToNumeral(bitArr[0])), udp);
+            }
+
+            AutoMode am = new AutoMode(udp, this);
+            am.Show();
+            this.Visibility = Visibility.Hidden;
         }
     }
 }

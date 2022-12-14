@@ -8,8 +8,8 @@
         Title="MainWindow" Height="265.9" Width="441" Activated="Window_Activated" Loaded="Window_Loaded" Closing="Window_Closing"  >
     <Grid Margin="0,0,2,2">
         <Button x:Name="btHandMode" Content="Ручной режим" HorizontalAlignment="Left" Margin="10,102,0,0" VerticalAlignment="Top" Width="149" Height="44" Click="btHandMode_Click"/>
-        <Button x:Name="btAutoMode" Content="Автоматический режим" HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Top" Width="149" Height="44" Click="btHandMode_Click"/>
-        <Button x:Name="btServiceMode" Content="Сервис" HorizontalAlignment="Left" Margin="10,171,0,0" VerticalAlignment="Top" Width="149" Height="44"/>
+        <Button x:Name="btAutoMode" Content="Автоматический режим" HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Top" Width="149" Height="44" Click="btAutoMode_Click"/>
+        <Button x:Name="btServiceMode" Content="Сервис" HorizontalAlignment="Left" Margin="10,171,0,0" VerticalAlignment="Top" Width="149" Height="44" Click="btServiceMode_Click"/>
         <Button x:Name="btStartReferencing" Content="Старт реферирования" HorizontalAlignment="Left" Margin="272,171,0,0" VerticalAlignment="Top" Width="149" Height="44" Click="btStartReferencing_Click"/>
         <Label x:Name="label" Content="Основное меню" HorizontalAlignment="Left" Margin="136,0,0,0" VerticalAlignment="Top" Width="218" FontSize="18" FontWeight="Bold"/>
         <Label x:Name="label1" Content="Станок не реферирован" HorizontalAlignment="Left" Margin="217,39,0,0" VerticalAlignment="Top" Width="204" FontSize="16" FontWeight="Bold" Background="#FFDC0E0E"/>

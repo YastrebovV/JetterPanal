@@ -1,0 +1,65 @@
+﻿<Window x:Class="JetterPanal.AutoNewPlate"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JetterPanal"
+        mc:Ignorable="d"
+        Title="AutoNewPlate" Height="264.981" Width="797.296" Closing="Window_Closing" Loaded="Window_Loaded">
+    <Grid>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="217" Margin="10,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="359"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="27" Margin="19,20,0,0" VerticalAlignment="Top" Width="162">
+            <Label x:Name="label" Content="Configure Automatic Mode" Margin="-1" Height="27" VerticalAlignment="Top"/>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="25" Margin="19,60,0,0" VerticalAlignment="Top" Width="115">
+            <Label x:Name="label1" Content="Bevel-Width (a) :" Margin="2,-3,-1,1"/>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="25" Margin="19,90,0,0" VerticalAlignment="Top" Width="115">
+            <Label x:Name="label2" Content="                Angle :" Margin="2,-3,-1,1"/>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="25" Margin="19,120,0,0" VerticalAlignment="Top" Width="115">
+            <Label x:Name="label3" Content="Plate-Thickness :" Margin="2,-3,-1,1"/>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="25" Margin="19,150,0,0" VerticalAlignment="Top" Width="115">
+            <Label x:Name="label4" Content="Removal-Constant :" Margin="2,-3,-1,1"/>
+        </Border>
+        <TextBox x:Name="tbBelWidth" HorizontalAlignment="Left" Height="25" Margin="147,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66" KeyDown="tbBelWidth_KeyDown"/>
+        <TextBox x:Name="tbAngel" HorizontalAlignment="Left" Height="25" Margin="147,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66" KeyDown="tbAngel_KeyDown"/>
+        <TextBox x:Name="tbPlateThick" HorizontalAlignment="Left" Height="25" Margin="147,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66" KeyDown="tbPlateThick_KeyDown"/>
+        <TextBox x:Name="tbRemConst" HorizontalAlignment="Left" Height="25" Margin="147,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66" KeyDown="tbRemConst_KeyDown"/>
+        <Button x:Name="btCalc" Content="Start Calculation" HorizontalAlignment="Left" Margin="19,187,0,0" VerticalAlignment="Top" Width="340" Height="33" Click="btCalc_Click"/>
+        <ListBox x:Name="lbError" HorizontalAlignment="Left" Height="115" Margin="234,60,0,0" VerticalAlignment="Top" Width="125"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="25" Margin="235,32,0,0" VerticalAlignment="Top" Width="124">
+            <Label x:Name="label5" Content="Errors:" Margin="2,-3,20,1"/>
+        </Border>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="217" Margin="374,10,0,0" Stroke="Black" VerticalAlignment="Top" Width="406"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="27" Margin="389,20,0,0" VerticalAlignment="Top" Width="162">
+            <Label x:Name="label6" Content="Configure Automatic Mode" Margin="-1" Height="27" VerticalAlignment="Top"/>
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="25" Margin="389,65,0,0" VerticalAlignment="Top" Width="115">
+            <Label x:Name="label7" Content="End of Plate :" Margin="2,-3,-1,1"/>
+        </Border>
+        <TextBox x:Name="tbEndPlate" HorizontalAlignment="Left" Height="25" Margin="516,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66" KeyDown="tbEndPlate_KeyDown"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="25" Margin="389,106,0,0" VerticalAlignment="Top" Width="115">
+            <Label x:Name="label8" Content="Backstop Position : " Margin="2,-3,-1,1"/>
+        </Border>
+        <TextBox x:Name="tbBackPos" HorizontalAlignment="Left" Height="25" Margin="516,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="66"/>
+        <ListBox x:Name="lbMess" HorizontalAlignment="Left" Height="85" Margin="592,52,0,0" VerticalAlignment="Top" Width="179"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="25" Margin="591,20,0,0" VerticalAlignment="Top" Width="180">
+            <Label x:Name="label9" Content="Message :" Margin="2,-3,-1,1"/>
+        </Border>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="82" Margin="380,142,0,0" Stroke="Black" VerticalAlignment="Top" Width="207"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="25" Margin="389,150,0,0" VerticalAlignment="Top" Width="131">
+            <Label x:Name="label10" Content="Revue Values of Pass :" Margin="2,-3,0,1" HorizontalAlignment="Left" Width="125"/>
+        </Border>
+        <TextBox x:Name="tbPass" HorizontalAlignment="Left" Height="25" Margin="532,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="50" KeyDown="tbPass_KeyDown"/>
+        <Button x:Name="btConfirm" Content="Confirm" HorizontalAlignment="Left" Margin="389,187,0,0" VerticalAlignment="Top" Width="193" Height="33" Click="btConfirm_Click"/>
+        <Rectangle Fill="#FFF4F4F5" HorizontalAlignment="Left" Height="82" Margin="592,142,0,0" Stroke="Black" VerticalAlignment="Top" Width="179"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="25" Margin="598,150,0,0" VerticalAlignment="Top" Width="113">
+            <Label x:Name="label11" Content="Adjustment Offset:" Margin="2,-3,-1,1"/>
+        </Border>
+        <TextBox x:Name="tbAdjOffset" HorizontalAlignment="Left" Height="25" Margin="715,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="51" KeyDown="tbAdjOffset_KeyDown"/>
+        <Button x:Name="btSavePlate" Content="Save Plate" HorizontalAlignment="Left" Margin="599,187,0,0" VerticalAlignment="Top" Width="167" Height="33" Click="btSavePlate_Click"/>
+
+    </Grid>
+</Window>

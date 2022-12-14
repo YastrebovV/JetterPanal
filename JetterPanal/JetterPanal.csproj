@@ -56,12 +56,19 @@
     <Compile Include="AutoMode.xaml.cs">
       <DependentUpon>AutoMode.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AutoNewPlate.xaml.cs">
+      <DependentUpon>AutoNewPlate.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Referens.xaml.cs">
       <DependentUpon>Referens.xaml</DependentUpon>
     </Compile>
     <Compile Include="UdpClass.cs" />
     <Compile Include="WorkWithTags.cs" />
     <Page Include="AutoMode.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AutoNewPlate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

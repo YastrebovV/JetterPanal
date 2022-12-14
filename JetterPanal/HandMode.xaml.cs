@@ -75,7 +75,7 @@ namespace JetterPanal
                         {
                             tbActZero.Text = Convert.ToString(floatList[0]); //1000111
                             tbActFeed.Text = Convert.ToString(floatList[1]); //1000109                        
-                            tbBackPos.Text = Convert.ToString(floatList[3]); //1000113
+                            tbBackPos.Text = Convert.ToString(floatList[3]); //1000113               
 
                             if (!firstCycleFloat)
                             {
@@ -252,8 +252,12 @@ namespace JetterPanal
                 }));
         }
 
+
+        //Form closed
         void HandModeClosed(object sender, EventArgs e)
         {
+            stopTimer();
+            timerUpdateData.Dispose();
             main_.Visibility = Visibility.Visible;
         }
 
@@ -263,7 +267,7 @@ namespace JetterPanal
             binary.CopyTo(toInt, 0);
             return toInt[0];
         }
-
+        //Form loaded
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             ellipses.Add(elStateMotor);
@@ -342,7 +346,7 @@ namespace JetterPanal
             if (e.Key == Key.Enter)
             {
                 timerUpdateData.Stop();
-                tags.setTag(1000100, 0x0c, Convert.ToSingle(tbLowLim.Text), udp_);    //Set the Side A.  0x0c - var type float
+                tags.setTag(1000100, 0x0c, Convert.ToSingle(tbSideA.Text), udp_);    //Set the Side A.  0x0c - var type float
                 timerUpdateData.Start();
             }
         }
