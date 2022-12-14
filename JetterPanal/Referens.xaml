@@ -5,10 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JetterPanal"
         mc:Ignorable="d"
-        Title="Referens" Height="290
-        " Width="300">
+        Title="Referens" Height="290" Width="300"   Closing="Window_Closing" Loaded="Window_Loaded">
     <Grid Margin="1,0,2,-1">
-        <Label x:Name="label" Content="Backstop drops" HorizontalAlignment="Left" Margin="15,18,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label3" Content="Adjastment" HorizontalAlignment="Left" Margin="16,54,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label4" Content="Oszillation" HorizontalAlignment="Left" Margin="16,84,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label5" Content="Angle" HorizontalAlignment="Left" Margin="16,116,0,0" VerticalAlignment="Top"/>
@@ -63,6 +61,7 @@
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="26" Margin="206,212,0,0" VerticalAlignment="Top" Width="68">
             <Ellipse x:Name="elClampBarRefOK" Fill="#FFC95634" HorizontalAlignment="Left" Height="20" Stroke="Black" VerticalAlignment="Top" Width="20" Margin="22,2,0,0"/>
         </Border>
+        <Button x:Name="pnBackStopDrop" Content="Backstop drops" HorizontalAlignment="Left" Margin="16,17,0,0" VerticalAlignment="Top" Width="110" Height="26" Background="#FF50BB3F"/>
 
     </Grid>
 </Window>

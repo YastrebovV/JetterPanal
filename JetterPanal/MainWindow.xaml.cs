@@ -90,14 +90,6 @@ namespace JetterPanal
                 }));
         }
 
-        void FormOpening()
-        {
-            startTimer();
-        }
-        void FormClosing(object sender, EventArgs e)
-        {
-            udp.closeUDP();
-        }
 
         private void btHandMode_Click(object sender, RoutedEventArgs e)
         {
@@ -129,6 +121,10 @@ namespace JetterPanal
                 bitArr[0][2] = true;
                 tags.setTag(1001010, 0x0a, Convert.ToSingle(ToNumeral(bitArr[0])), udp);
                 timerUpdateData.Start();
+
+                Referens rf = new Referens(udp, this);
+                rf.Show();
+                this.Visibility = Visibility.Hidden;
             }
         }
 
@@ -136,6 +132,14 @@ namespace JetterPanal
         {
             if(!timerUpdateData.Enabled)
                 timerUpdateData.Start();
+        }
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            startTimer();
+        }
+        private void Window_Closing(object sender, CancelEventArgs e)
+        {
+            udp.closeUDP();
         }
     }
 }

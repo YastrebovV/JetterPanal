@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:JetterPanal"
         mc:Ignorable="d"
-        Title="MainWindow" Height="265.9" Width="441" Closed="FormClosing" Activated="Window_Activated"  >
+        Title="MainWindow" Height="265.9" Width="441" Activated="Window_Activated" Loaded="Window_Loaded" Closing="Window_Closing"  >
     <Grid Margin="0,0,2,2">
         <Button x:Name="btHandMode" Content="Ручной режим" HorizontalAlignment="Left" Margin="10,102,0,0" VerticalAlignment="Top" Width="149" Height="44" Click="btHandMode_Click"/>
         <Button x:Name="btAutoMode" Content="Автоматический режим" HorizontalAlignment="Left" Margin="10,34,0,0" VerticalAlignment="Top" Width="149" Height="44" Click="btHandMode_Click"/>

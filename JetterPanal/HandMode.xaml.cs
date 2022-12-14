@@ -454,7 +454,5 @@ namespace JetterPanal
                 timerUpdateData.Start();
             }
         }
-
-
     }
 }
