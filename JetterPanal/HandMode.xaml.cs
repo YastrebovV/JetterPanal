@@ -59,10 +59,12 @@ namespace JetterPanal
         }
         private void TimerUpdate(object sender, System.Timers.ElapsedEventArgs e)
         {
+            tags.reqGetTags(addressVariables, udp_);
+            Thread.Sleep(10);
+
             Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Background,
                 new Action(() => {
-                    this.timerUpdateData.Stop();                 
-                    tags.reqGetTags(addressVariables, udp_);
+                                              
                     List<float>  floatList = udp_.getFloatList();
                     List<int> intTagList = udp_.getIntList();
                     List<byte> flags = udp_.getByteList();
@@ -121,104 +123,104 @@ namespace JetterPanal
                     {
                         try
                         {
-                            if (flags[0] == 0x21)/*State motor*/
-                            {
-                                ellipses[0].Fill = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF50BB3F");
-                            }
-                            else
-                            {
-                                ellipses[0].Fill = (SolidColorBrush)new BrushConverter().ConvertFromString("#FFC95634");
-                            }
-
-                            if (flags[1] == 0x21)/*ProtectMotor*/
-                            {
-                                ellipses[1].Fill = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF50BB3F");
-                            }
-                            else
-                            {
-                                ellipses[1].Fill = (SolidColorBrush)new BrushConverter().ConvertFromString("#FFC95634");
-                            }
-
-                            if (flags[2] == 0x21)/*BeltTens*/
-                            {
-                                ellipses[2].Fill = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF50BB3F");
-                            }
-                            else
-                            {
-                                ellipses[2].Fill = (SolidColorBrush)new BrushConverter().ConvertFromString("#FFC95634");
-                            }
-
-                            if (flags[3] == 0x21)/*SensorTop*/
-                            {
-                                ellipses[3].Fill = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF50BB3F");
-                            }
-                            else
-                            {
-                                ellipses[3].Fill = (SolidColorBrush)new BrushConverter().ConvertFromString("#FFC95634");
-                            }
-
-                            if (flags[4] == 0x21)/*SensorBotton*/
-                            {
-                                ellipses[4].Fill = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF50BB3F");
-                            }
-                            else
-                            {
-                                ellipses[4].Fill = (SolidColorBrush)new BrushConverter().ConvertFromString("#FFC95634");
-                            }
-
-                            if (flags[5] == 0x21)/*correct value*/
-                            {
-                                 pnIncVal.Visibility = Visibility.Hidden;
-                            }
-                            else
-                            {
-                                pnIncVal.Visibility = Visibility.Visible;
-                            }
-
-                            if (flags[6] == 0x21)/*no release*/
-                            {
-                                pnNoRelease.Visibility = Visibility.Visible;
-                            }
-                            else
-                            {
-                                pnNoRelease.Visibility = Visibility.Hidden;
-                            }
-                            //for (int i = 0; i < flags.Count(); ++i)
+                            //if (flags[0] == 0x21)/*State motor*/
                             //{
-                            //    if (i == 5)//Panel incorrect value
-                            //    {
-                            //        if (flags[i] == 0x21)
-                            //        {
-                            //            pnIncVal.Visibility = Visibility.Hidden;
-                            //        }
-                            //        else
-                            //        {
-                            //            pnIncVal.Visibility = Visibility.Visible;
-                            //        }
-                            //    }
-                            //    else if (i == 6) //Panel no release
-                            //    {
-                            //        if (flags[i] == 0x21)
-                            //        {
-                            //            pnNoRelease.Visibility = Visibility.Visible;
-                            //        }
-                            //        else
-                            //        {
-                            //            pnNoRelease.Visibility = Visibility.Hidden;
-                            //        }
-                            //    }
-                            //    else
-                            //    {
-                            //        if (flags[i] == 0x21)
-                            //        {
-                            //            ellipses[i].Fill = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF50BB3F");
-                            //        }
-                            //        else
-                            //        {
-                            //            ellipses[i].Fill = (SolidColorBrush)new BrushConverter().ConvertFromString("#FFC95634");
-                            //        }
-                            //    }
+                            //    ellipses[0].Fill = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF50BB3F");
                             //}
+                            //else
+                            //{
+                            //    ellipses[0].Fill = (SolidColorBrush)new BrushConverter().ConvertFromString("#FFC95634");
+                            //}
+
+                            //if (flags[1] == 0x21)/*ProtectMotor*/
+                            //{
+                            //    ellipses[1].Fill = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF50BB3F");
+                            //}
+                            //else
+                            //{
+                            //    ellipses[1].Fill = (SolidColorBrush)new BrushConverter().ConvertFromString("#FFC95634");
+                            //}
+
+                            //if (flags[2] == 0x21)/*BeltTens*/
+                            //{
+                            //    ellipses[2].Fill = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF50BB3F");
+                            //}
+                            //else
+                            //{
+                            //    ellipses[2].Fill = (SolidColorBrush)new BrushConverter().ConvertFromString("#FFC95634");
+                            //}
+
+                            //if (flags[3] == 0x21)/*SensorTop*/
+                            //{
+                            //    ellipses[3].Fill = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF50BB3F");
+                            //}
+                            //else
+                            //{
+                            //    ellipses[3].Fill = (SolidColorBrush)new BrushConverter().ConvertFromString("#FFC95634");
+                            //}
+
+                            //if (flags[4] == 0x21)/*SensorBotton*/
+                            //{
+                            //    ellipses[4].Fill = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF50BB3F");
+                            //}
+                            //else
+                            //{
+                            //    ellipses[4].Fill = (SolidColorBrush)new BrushConverter().ConvertFromString("#FFC95634");
+                            //}
+
+                            //if (flags[5] == 0x21)/*correct value*/
+                            //{
+                            //     pnIncVal.Visibility = Visibility.Hidden;
+                            //}
+                            //else
+                            //{
+                            //    pnIncVal.Visibility = Visibility.Visible;
+                            //}
+
+                            //if (flags[6] == 0x21)/*no release*/
+                            //{
+                            //    pnNoRelease.Visibility = Visibility.Visible;
+                            //}
+                            //else
+                            //{
+                            //    pnNoRelease.Visibility = Visibility.Hidden;
+                            //}
+                            for (int i = 0; i < flags.Count(); ++i)
+                            {
+                                if (i == 5)//Panel incorrect value
+                                {
+                                    if (flags[i] == 0x21)
+                                    {
+                                        pnIncVal.Visibility = Visibility.Hidden;
+                                    }
+                                    else
+                                    {
+                                        pnIncVal.Visibility = Visibility.Visible;
+                                    }
+                                }
+                                else if (i == 6) //Panel no release
+                                {
+                                    if (flags[i] == 0x21)
+                                    {
+                                        pnNoRelease.Visibility = Visibility.Visible;
+                                    }
+                                    else
+                                    {
+                                        pnNoRelease.Visibility = Visibility.Hidden;
+                                    }
+                                }
+                                else
+                                {
+                                    if (flags[i] == 0x21)
+                                    {
+                                        ellipses[i].Fill = (SolidColorBrush)new BrushConverter().ConvertFromString("#FF50BB3F");
+                                    }
+                                    else
+                                    {
+                                        ellipses[i].Fill = (SolidColorBrush)new BrushConverter().ConvertFromString("#FFC95634");
+                                    }
+                                }
+                            }
                         }
                         catch
                         {
@@ -247,8 +249,7 @@ namespace JetterPanal
 
                         }
                     }
-                
-                    this.timerUpdateData.Start();
+                                
                 }));
         }
 
@@ -282,18 +283,18 @@ namespace JetterPanal
         {
             if (e.Key == Key.Enter)
             {
-                timerUpdateData.Stop();
+              //  timerUpdateData.Stop();
                 tags.setTag(1000112, 0x0c, Convert.ToSingle(tbSetZero.Text), udp_); //set value zero position
-                timerUpdateData.Start();
+             //   timerUpdateData.Start();
             }
         }
         private void tbSetAng_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
-                timerUpdateData.Stop();
+             //   timerUpdateData.Stop();
                 tags.setTag(1000005, 0x0c, Convert.ToSingle(tbSetAng.Text), udp_); //set value angle
-                timerUpdateData.Start();
+             //   timerUpdateData.Start();
             }
         }
 
@@ -301,120 +302,120 @@ namespace JetterPanal
         {
             if (bitArr != null)
             {            
-                timerUpdateData.Stop();
+              //  timerUpdateData.Stop();
                 bitArr[1][3] = true;
                 tags.setTag(1001012, 0x0a, Convert.ToSingle(ToNumeral(bitArr[1])), udp_); //start to zero position
-                timerUpdateData.Start();
+              //  timerUpdateData.Start();
             }
         }
         private void btStartToAngle_Click(object sender, RoutedEventArgs e)
         {
-            timerUpdateData.Stop();
+          //  timerUpdateData.Stop();
             tags.setTag(155, 0x4c, udp_); //start to angle drive (flag - 155)
-            timerUpdateData.Start();
+          //  timerUpdateData.Start();
         }
 
         private void tbTargetPos_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
-                timerUpdateData.Stop();
+             //   timerUpdateData.Stop();
                 tags.setTag(1000004, 0x0c, Convert.ToSingle(tbTargetPos.Text), udp_);   //Set the target position.  0x0c - var type float
-                timerUpdateData.Start();
+             //   timerUpdateData.Start();
             }
         }
         private void tbUpLim_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
-                timerUpdateData.Stop();
+             //   timerUpdateData.Stop();
                 tags.setTag(1001120, 0x0a, Convert.ToSingle(tbUpLim.Text), udp_);   //Set the pos upper limit switch.  0x0a - var type decimal
-                timerUpdateData.Start();
+             //   timerUpdateData.Start();
             }
         }
         private void tbLowLim_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
-                timerUpdateData.Stop();
+            //    timerUpdateData.Stop();
                 tags.setTag(1001121, 0x0a, Convert.ToSingle(tbLowLim.Text), udp_);   //Set the pos lower limit switch.  0x0a - var type decimal
-                timerUpdateData.Start();
+             //   timerUpdateData.Start();
             }
         }
         private void tbSideA_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
-                timerUpdateData.Stop();
+             //   timerUpdateData.Stop();
                 tags.setTag(1000100, 0x0c, Convert.ToSingle(tbSideA.Text), udp_);    //Set the Side A.  0x0c - var type float
-                timerUpdateData.Start();
+             //   timerUpdateData.Start();
             }
         }
 
         private void btChPlateThich_Click(object sender, RoutedEventArgs e)
         {
-            timerUpdateData.Stop();
+           // timerUpdateData.Stop();
             tags.setTag(136, 0x4c, udp_); //change plate thickness (flag - 136)
-            timerUpdateData.Start();
+           // timerUpdateData.Start();
         }
         private void btChOszillation_Click(object sender, RoutedEventArgs e)
         {
             if (bitArr != null)
             {                
-                timerUpdateData.Stop();
+             //   timerUpdateData.Stop();
                 bitArr[2][0] = true;
                 tags.setTag(1001013, 0x0a, Convert.ToSingle(ToNumeral(bitArr[2])), udp_); //change oszillation
-                timerUpdateData.Start();
+              //  timerUpdateData.Start();
             }
         }
         private void btZeroToZero_Click(object sender, RoutedEventArgs e)
         {
             if (bitArr != null)
             {             
-                timerUpdateData.Stop();
+              //  timerUpdateData.Stop();
                 bitArr[1][2] = true;
                 tags.setTag(1001012, 0x0a, Convert.ToSingle(ToNumeral(bitArr[1])), udp_); //zero to zero ?
-                timerUpdateData.Start();
+              //  timerUpdateData.Start();
             }
         }
         private void btFeedZero_Click(object sender, RoutedEventArgs e)
         {
             if (bitArr != null)
             {             
-                timerUpdateData.Stop();
+              //  timerUpdateData.Stop();
                 bitArr[1][1] = true;
                 tags.setTag(1001012, 0x0a, Convert.ToSingle(ToNumeral(bitArr[1])), udp_); //feed to zero ?
-                timerUpdateData.Start();
+              //  timerUpdateData.Start();
             }
         }
         private void btCalc_Click(object sender, RoutedEventArgs e)
         {
             if (bitArr != null)
             {              
-                timerUpdateData.Stop();
+               // timerUpdateData.Stop();
                 bitArr[1][4] = true;
                 tags.setTag(1001012, 0x0a, Convert.ToSingle(ToNumeral(bitArr[1])), udp_); //zero to zero ?
-                timerUpdateData.Start();
+              //  timerUpdateData.Start();
             }
         }
         private void btMoveUp_MouseDown(object sender, MouseButtonEventArgs e)
         {
             if (bitArr != null)
             {           
-                timerUpdateData.Stop();
+              //  timerUpdateData.Stop();
                 bitArr[2][1] = true;
                 tags.setTag(1001013, 0x0a, Convert.ToSingle(ToNumeral(bitArr[2])), udp_); 
-                timerUpdateData.Start();
+              //  timerUpdateData.Start();
             }
         }
         private void btMoveUp_MouseUp(object sender, MouseButtonEventArgs e)
         {
             if (bitArr != null)
             {
-                timerUpdateData.Stop();
+              //  timerUpdateData.Stop();
                 bitArr[2][1] = false;
                 tags.setTag(1001013, 0x0a, Convert.ToSingle(ToNumeral(bitArr[2])), udp_); 
-                timerUpdateData.Start();
+              //  timerUpdateData.Start();
             }
         }
 
@@ -422,40 +423,40 @@ namespace JetterPanal
         {
             if (bitArr != null)
             {
-                timerUpdateData.Stop();
+              //  timerUpdateData.Stop();
                 bitArr[2][2] = true;
                 tags.setTag(1001013, 0x0a, Convert.ToSingle(ToNumeral(bitArr[2])), udp_);
-                timerUpdateData.Start();
+               // timerUpdateData.Start();
             }
         }
         private void btMoveDown_MouseUp(object sender, MouseButtonEventArgs e)
         {
             if (bitArr != null)
             {
-                timerUpdateData.Stop();
+              //  timerUpdateData.Stop();
                 bitArr[2][2] = false;
                 tags.setTag(1001013, 0x0a, Convert.ToSingle(ToNumeral(bitArr[2])), udp_);
-                timerUpdateData.Start();
+              //  timerUpdateData.Start();
             }
         }
         private void btSaveUpPos_Click(object sender, RoutedEventArgs e)
         {
             if (bitArr != null)
             {
-                timerUpdateData.Stop();
+               // timerUpdateData.Stop();
                 bitArr[2][3] = true;
                 tags.setTag(1001013, 0x0a, Convert.ToSingle(ToNumeral(bitArr[2])), udp_);
-                timerUpdateData.Start();
+               // timerUpdateData.Start();
             }
         }
         private void btSaveLowPos_Click(object sender, RoutedEventArgs e)
         {
             if (bitArr != null)
             {
-                timerUpdateData.Stop();
+               // timerUpdateData.Stop();
                 bitArr[2][4] = true;
                 tags.setTag(1001013, 0x0a, Convert.ToSingle(ToNumeral(bitArr[2])), udp_);
-                timerUpdateData.Start();
+               // timerUpdateData.Start();
             }
         }
     }

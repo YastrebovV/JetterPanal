@@ -14,29 +14,26 @@ namespace JetterPanal
 {
     public class UdpClass
     {
-        public UdpClass(IPAddress remoteIPAddress, int PortServer, int PortClient, typeVariable type) {
+        public UdpClass(IPAddress remoteIPAddress, int PortServer, int PortClient) {
             remoteIPAddress_ = remoteIPAddress;
             PortServer_ = PortServer;
             PortClient_ = PortClient;
-            typeVarEnum = type;
 
             UDP_Thread = new Thread(new ThreadStart(Thread_UDP));
-                try
-                {
-                    if (!(UDP_Thread.ThreadState == ThreadState.Running))
-                    {
-                        UDP_Thread = new Thread(new ThreadStart(Thread_UDP));
-                        UdpServer = new UdpClient(PortServer);
-                        
-                        UDP_Thread.Start();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    UdpServer.Close();
-                    UDP_Thread.Abort();
-                    MessageBox.Show("Возникло исключение: " + ex.ToString() + "\n  " + ex.Message);
-                }
+
+            try
+            {
+                 if (!(UDP_Thread.ThreadState == ThreadState.Running))
+                 {
+                     UDP_Thread.Start();
+                 }
+            }
+            catch (Exception ex)
+            {
+                 UdpServer.Close();
+                 UDP_Thread.Abort();
+                 MessageBox.Show("Возникло исключение: " + ex.ToString() + "\n  " + ex.Message);
+            }
           
         }
          ~UdpClass()
@@ -51,13 +48,11 @@ namespace JetterPanal
         private static int PortServer_ = 50002;
         private static int PortClient_ = 50000;
 
-        public enum typeVariable
-        {
-            typeFloat,
-            typeInt
-        }
-
-        typeVariable typeVarEnum;
+        //public enum typeVariable
+        //{
+        //    typeFloat,
+        //    typeInt
+        //}
 
         List<float> valueFloat = new List<float>();
         List<int> valueInt = new List<int>();
@@ -153,7 +148,8 @@ namespace JetterPanal
                         }                    
                               
                     }
-                    UDP_Thread.Join(2);
+
+                    UDP_Thread.Join(1);
                 }
                 catch (ThreadAbortException ex)
                 {
@@ -161,6 +157,7 @@ namespace JetterPanal
                 }
             }
         }
+
         public void closeUDP()
         {
             if (UDP_Thread.ThreadState == ThreadState.Running)

@@ -48,7 +48,6 @@ namespace JetterPanal
         {
             Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Background,
                 new Action(() => {
-                    this.timerUpdateData.Stop();
 
                     this.tags.reqGetTags(addressVariables, udp_);
                     List<int> intTagList = udp_.getIntList();
@@ -67,7 +66,6 @@ namespace JetterPanal
                        // MessageBox.Show(ex.Message);
                     }
 
-                    this.timerUpdateData.Start();
                 }));
         }
 

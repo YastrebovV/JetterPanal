@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Timers;
+using System.Threading;
 
 namespace JetterPanal
 {
@@ -33,7 +34,7 @@ namespace JetterPanal
         WorkWithTags tags = new WorkWithTags();
         UdpClass udp_;
         Window main_;
-        public Timer timerUpdateData = new Timer(1000);
+        public System.Timers.Timer timerUpdateData = new System.Timers.Timer(1000);
 
         private void startTimer()
         {
@@ -46,11 +47,10 @@ namespace JetterPanal
         }
         private void TimerUpdate(object sender, System.Timers.ElapsedEventArgs e)
         {
+            stopTimer();
             Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Background,
                 new Action(() => {
-                    this.timerUpdateData.Stop();
-
-                    this.tags.reqGetTags(addressVariables, udp_);
+                    tags.reqGetTags(addressVariables, udp_);
                     List<int> intTagList = udp_.getIntList();
 
                     if (intTagList != null && intTagList.Count != 0)
@@ -84,9 +84,9 @@ namespace JetterPanal
 
                         }
                     }
-
-                    this.timerUpdateData.Start();
+                  
                 }));
+            startTimer();
         }
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)

@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Timers;
 using System.Net;
+using System.Threading;
 
 
 namespace JetterPanal
@@ -42,8 +43,8 @@ namespace JetterPanal
         List<BitArray> bitArr = new List<BitArray>();
 
         WorkWithTags tags = new WorkWithTags();
-        UdpClass udp = new UdpClass(remoteIPAddress, PortServer, PortClient, UdpClass.typeVariable.typeFloat);
-        public Timer timerUpdateData = new Timer(1000);       
+        UdpClass udp = new UdpClass(remoteIPAddress, PortServer, PortClient);
+        public System.Timers.Timer timerUpdateData = new System.Timers.Timer(1000);       
 
         private void startTimer()
         {
@@ -56,37 +57,40 @@ namespace JetterPanal
         }
         private void TimerUpdate(object sender, System.Timers.ElapsedEventArgs e)
         {
+            stopTimer();
             Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Background,
                 new Action(() => {
-                    this.timerUpdateData.Stop();
-
-                    this.tags.reqGetTags(addressVariables, udp);
+                    tags.reqGetTags(addressVariables, udp);
                     List<int> intTagList = udp.getIntList();
                     List<byte> flags = udp.getByteList();
 
                     bitArr.Clear();
-
-                    if (flags != null && flags.Count != 0)
+                    try
                     {
-                        if (flags[0] == 0x21)
+                        if (flags != null && flags.Count != 0)
                         {
-                            btStartReferencing.Visibility = Visibility.Hidden;
-                            label1.Visibility = Visibility.Hidden;
+                            if (flags[0] == 0x21)
+                            {
+                                btStartReferencing.Visibility = Visibility.Hidden;
+                                label1.Visibility = Visibility.Hidden;
+                            }
+                            else
+                            {
+                                btStartReferencing.Visibility = Visibility.Visible;
+                                label1.Visibility = Visibility.Visible;
+                            }
                         }
-                        else
-                        {
-                            btStartReferencing.Visibility = Visibility.Visible;
-                            label1.Visibility = Visibility.Visible;
-                        }
-                    }
 
-                    if (intTagList != null && intTagList.Count != 0)
+                        if (intTagList != null && intTagList.Count != 0)
+                        {
+                            bitArr.Add(new BitArray(new int[] { BitConverter.ToInt32(BitConverter.GetBytes(intTagList[0]), 0) })); //1001010
+                        }
+                    }catch
                     {
-                         bitArr.Add(new BitArray(new int[] { BitConverter.ToInt32(BitConverter.GetBytes(intTagList[0]), 0) })); //1001010
-                    }
-                    
-                    this.timerUpdateData.Start();
+
+                    }             
                 }));
+            startTimer();
         }
 
 

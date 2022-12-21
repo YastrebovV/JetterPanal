@@ -53,7 +53,7 @@ namespace JetterPanal
         {
             Dispatcher.BeginInvoke(System.Windows.Threading.DispatcherPriority.Background,
                 new Action(() => {
-                    this.timerUpdateData.Stop();
+                   
                     tags.reqGetTags(addressVariables, udp_);
                     List<float> floatList = udp_.getFloatList();
                     List<int> intTagList = udp_.getIntList();
@@ -140,7 +140,7 @@ namespace JetterPanal
                             // MessageBox.Show(ex.Message);
                         }
                     }
-                        this.timerUpdateData.Start();
+                        
                 }));
         }
 
@@ -155,46 +155,46 @@ namespace JetterPanal
         {
             if (bitArr != null)
             {
-                timerUpdateData.Stop();
+               // timerUpdateData.Stop();
                 bitArr[0][1] = true;
                 tags.setTag(1001015, 0x0a, Convert.ToSingle(ToNumeral(bitArr[0])), udp_); //
-                timerUpdateData.Start();
+              //  timerUpdateData.Start();
             }
         }
         private void tbBelWidth_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
-                timerUpdateData.Stop();
+             //   timerUpdateData.Stop();
                 tags.setTag(1000100, 0x0c, Convert.ToSingle(tbBelWidth.Text), udp_); // set Bevel-Width (a)
-                timerUpdateData.Start();
+             //   timerUpdateData.Start();
             }
         }
         private void tbAngel_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
-                timerUpdateData.Stop();
+              //  timerUpdateData.Stop();
                 tags.setTag(1000119, 0x0c, Convert.ToSingle(tbAngel.Text), udp_); // set Angle
-                timerUpdateData.Start();
+              //  timerUpdateData.Start();
             }
         }
         private void tbPlateThick_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
-                timerUpdateData.Stop();
+              //  timerUpdateData.Stop();
                 tags.setTag(1000101, 0x0c, Convert.ToSingle(tbPlateThick.Text), udp_); // set Plate-Thickness
-                timerUpdateData.Start();
+              //  timerUpdateData.Start();
             }
         }
         private void tbRemConst_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
-                timerUpdateData.Stop();
+             //   timerUpdateData.Stop();
                 tags.setTag(1000130, 0x0c, Convert.ToSingle(tbRemConst.Text), udp_); // set Removal-Constant
-                timerUpdateData.Start();
+             //   timerUpdateData.Start();
             }
         }
 
@@ -202,10 +202,10 @@ namespace JetterPanal
         {
             if (bitArr != null)
             {
-                timerUpdateData.Stop();
+             //   timerUpdateData.Stop();
                 bitArr[1][9] = true;
                 tags.setTag(1001010, 0x0a, Convert.ToSingle(ToNumeral(bitArr[1])), udp_);
-                timerUpdateData.Start();
+             //   timerUpdateData.Start();
             }
 
             stopTimer();
@@ -221,10 +221,10 @@ namespace JetterPanal
         {
             if (bitArr != null)
             {
-                timerUpdateData.Stop();
+             //   timerUpdateData.Stop();
                 bitArr[0][14] = true;
                 tags.setTag(1001015, 0x0a, Convert.ToSingle(ToNumeral(bitArr[0])), udp_);
-                timerUpdateData.Start();
+             //   timerUpdateData.Start();
             }
         }
 
@@ -232,18 +232,18 @@ namespace JetterPanal
         {
             if (e.Key == Key.Enter)
             {
-                timerUpdateData.Stop();
+             //   timerUpdateData.Stop();
                 tags.setTag(1001140, 0x0a, Convert.ToSingle(tbEndPlate.Text), udp_); // 
-                timerUpdateData.Start();
+             //   timerUpdateData.Start();
             }
         }
         private void tbPass_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.Key == Key.Enter)
             {
-                timerUpdateData.Stop();
+             //   timerUpdateData.Stop();
                 tags.setTag(1001128, 0x0a, Convert.ToSingle(tbPass.Text), udp_); //
-                timerUpdateData.Start();
+             //   timerUpdateData.Start();
             }
         }
 
@@ -251,9 +251,9 @@ namespace JetterPanal
         {
             if (e.Key == Key.Enter)
             {
-                timerUpdateData.Stop();
+             //   timerUpdateData.Stop();
                 tags.setTag(1000118, 0x0c, Convert.ToSingle(tbPass.Text), udp_); //Adjstment offset
-                timerUpdateData.Start();
+             //   timerUpdateData.Start();
             }
         }
 
@@ -261,10 +261,10 @@ namespace JetterPanal
         {
             if (bitArr != null)
             {
-                timerUpdateData.Stop();
+              //  timerUpdateData.Stop();
                 bitArr[2][2] = true;
                 tags.setTag(1001017, 0x0a, Convert.ToSingle(ToNumeral(bitArr[2])), udp_); //save plate
-                timerUpdateData.Start();
+              //  timerUpdateData.Start();
             }
         }
     }

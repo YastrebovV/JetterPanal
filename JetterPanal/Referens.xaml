@@ -9,16 +9,16 @@
     <Grid Margin="1,0,2,-1">
         <Label x:Name="label3" Content="Adjastment" HorizontalAlignment="Left" Margin="16,54,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label4" Content="Oszillation" HorizontalAlignment="Left" Margin="16,84,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label5" Content="Angle" HorizontalAlignment="Left" Margin="16,116,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label6" Content="Backstop" HorizontalAlignment="Left" Margin="16,148,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="label7" Content="Feed" HorizontalAlignment="Left" Margin="16,180,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label5" Content="Angle" HorizontalAlignment="Left" Margin="16,147,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label6" Content="Backstop" HorizontalAlignment="Left" Margin="16,181,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label7" Content="Feed" HorizontalAlignment="Left" Margin="16,116,0,0" VerticalAlignment="Top"/>
         <Label x:Name="label8" Content="Clamping Bar" HorizontalAlignment="Left" Margin="16,212,0,0" VerticalAlignment="Top"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="26" Margin="16,212,0,0" VerticalAlignment="Top" Width="110"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="26" Margin="16,54,0,0" VerticalAlignment="Top" Width="110"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="26" Margin="16,85,0,0" VerticalAlignment="Top" Width="110"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="26" Margin="16,116,0,0" VerticalAlignment="Top" Width="110"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="26" Margin="16,148,0,0" VerticalAlignment="Top" Width="110"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="26" Margin="16,180,0,0" VerticalAlignment="Top" Width="110"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="26" Margin="16,181,0,0" VerticalAlignment="Top" Width="110"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="26" Margin="16,116,0,0" VerticalAlignment="Top" Width="110"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="26" Margin="133,17,0,0" VerticalAlignment="Top" Width="68">
             <Label x:Name="label1" Content="Running" HorizontalAlignment="Left" Margin="6,-2,0,0" VerticalAlignment="Top"/>
         </Border>
